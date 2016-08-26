@@ -1,0 +1,58 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//Pad1
+//====== DrawFigFrame parameters=====
+/////////////////////Figure Frame TH2D
+string FigName EleLongitudinalSpace
+string FigTitle "Interaction points in Longitudinal Space"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string xtitle "s (m)"
+string ytitle ""
+Double_t X_left 5.4 //
+Double_t X_right 8.8 //
+Double_t Y_min 0. //
+Double_t Y_max 5000 // 
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+string figcontent "X0S>>histo11"
+string figcut ""
+string figoption "same"
+///////////////////////////////Ring Optics
+double betax_max 35 // meter
+double Vscale 500
+int LineColor 2
+double LineWidth 1
+//////////////////////////////Laser
+//===== laser beam specifications ====
+//         Llambda =  50.; /* wavelength in nm */
+//         Llambda =  40.; /* wavelength in nm */
+//         Llambda =  30.; /* wavelength in nm */
+//         Llambda =  20.; /* wavelength in nm */
+//         Llambda = 350.; /* wavelength in nm */
+//         Llambda =  12.4; /* wavelength in nm */
+//         Llambda = 266.; /* SONY 1W  */
+//         Llambda = 355.; /* Paladin 8W */
+//         Llambda =  10600.; /* wavelength in nm */
+//         Llambda =  1064.; /* wavelength in nm Nd-YAG4*/
+//
+double Llambda 10600.; /* wavelength in nm
+double Lwaist 1.; /* radius in mm */
+double Lsstart  5.683; //[m]  s at exit of B in upstream 
+double Lsend 8.557;  // [m]  s at entrance to B in downstream 
+double Lfocus  7.12; /* in s[m] 
+int nPtPlot 200
+//double LaserDrawScale 100000;//1mm=e-3m -> 100(left) : 1(right)
+double LaserDrawScale 500000;//1mm=e-3m -> 500(left) : 1(right)
+int LaserLineColor 3 //2:red 3:green 4:blue
+double LaserLineWidth 2
+//////////////////////////////Macro
+string FigMacro useDrawSimu/FigPtLongMacro.C
+
+
+enddoprm
+=============END of the data section

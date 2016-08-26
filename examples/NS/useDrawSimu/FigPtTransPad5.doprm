@@ -1,0 +1,28 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//Pad1
+//====== DrawFigFrame parameters=====
+/////////////////////Figure Frame TH2D
+string FigName EleAngXhisto
+string FigTitle "Electron angles in X"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string xtitle "x' (mrad)"
+string ytitle ""
+string figcontent "P0X/P0Z*1000>>histo3"
+string figcut ""
+string figoption "same"
+Double_t X_left -1. //
+Double_t X_right 1. //
+Double_t Y_min 0 //
+Double_t Y_max 4500 // 
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+
+
+enddoprm
+=============END of the data section

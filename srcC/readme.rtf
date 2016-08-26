@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg932\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset128 HiraKakuPro-W3;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red170\green13\blue145;\red28\green0\blue207;
+\red196\green26\blue22;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9960\viewh9540\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Original source files were copied from \
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "file:///Users/schin/Data/notes/cpplib/asource/LCSimu_v93/versions_indep/BlsimuSource_indep"}}{\fldrslt \cf2 \ul \ulc2 file:///Users/schin/Data/notes/cpplib/asource/LCSimu_v93/versions_indep/BlsimuSource_indep}}\uc0\u160 \
+\
+160727\
+errors with clang\
+srcC\
+  optics.c\
+    129 
+\f1\fs22 \CocoaLigature0  Rdata = calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));\
+       error: assigning to 'double *' from incompatible type 'void *'\
+	\
+	>>> Rdata = (\cf3 double\cf0  *) calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));
+\f0\fs24 \CocoaLigature1 \
+\
+  lattice.c 514, 515, 516, 518\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0            Idata = calloc(nline*icolumn,\cf3 sizeof\cf0 (\cf3 int\cf0 ));\
+           Rdata = calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));\
+           Sdata = calloc(nline*scolumn,\cf3 sizeof\cf0 (\cf3 char\cf0 *));  \
+           \cf3 for\cf0 (i=\cf4 0\cf0 ;i<nline*scolumn;i++)\{\
+              *(Sdata+i) = calloc(\cf4 64\cf0 ,\cf3 sizeof\cf0 (\cf3 char\cf0 ));\}\
+	  >>>\
+           Idata = (\cf3 int\cf0  *) calloc(nline*icolumn,\cf3 sizeof\cf0 (\cf3 int\cf0 ));\
+           Rdata = (\cf3 double\cf0  *) calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));\
+           Sdata = (\cf3 char\cf0  **) calloc(nline*scolumn,\cf3 sizeof\cf0 (\cf3 char\cf0 *));\
+           \cf3 for\cf0 (i=\cf4 0\cf0 ;i<nline*scolumn;i++)\{\
+              *(Sdata+i) = (\cf3 char\cf0  *) calloc(\cf4 64\cf0 ,\cf3 sizeof\cf0 (\cf3 char\cf0 ));\}\
+  tagger.c 187\
+           Rdata = calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));\
+	  >>>\
+           Rdata = (\cf3 double\cf0  *) calloc(nline*rcolumn,\cf3 sizeof\cf0 (\cf3 double\cf0 ));\
+\
+warnings with clang\
+src\
+  Blsimu.cpp 41, 42\
+	    MAXNPR = blsimuDoPrm.getValue<\cf3 int\cf0 >(\cf5 "MAXNPR"\cf0 );\
+    	LPNAM = blsimuDoPrm.getValue<\cf3 int\cf0 >(\cf5 "LPNAM"\cf0 );\
+		warning: unused variable\
+	  >>> comment out\
+  EleTracer.cpp 33\
+		    \cf3 int\cf0  status = read_lattice(logstr,latfile.c_str(),...\
+		>>>\
+        	read_lattice(logstr,latfile.c_str(),...\
+\
+srcC\
+  optics.c 140\
+             exit; >>> exit(\cf4 9\cf0 );\
+		140  exit; >>> exit(\cf4 9\cf0 );\
+	104 \cf3 char\cf0  buffer[\cf4 240\cf0 ]=\cf5 ""\cf0 , unused\
+	103  unused variable 'l'\
+	98   unused variable 'ndata'\
+	101 unused Sdata\
+	99 unused Idata\
+	187 control may reach end of non-void function\
+		>>> added return 1;\
+	196 unused i1, scol, s, icol \
+  lattice.c\
+	52 unused i, j, k, x, xp, y, yp, z, SB1, SB2, CB1\
+	529 exit; >>> exit(\cf4 9\cf0 );\
+	537 exit; >>> exit(\cf4 9\cf0 );\
+	495 unused l\
+	498 unused buffer\
+	570 control reaches end >> added return 1;\
+  bendmag.c\
+	60 unused s, t\
+  scat_points.c\
+  stdran48.c\
+  tagger.c\
+	29 unused yp1,xp2, pp2, pt2, ...\
+	201 exit; >>> exit(\cf4 9\cf0 );\
+	181 unused l, \
+	217 added return 0;\
+	226 unused scol, \
+  bmgen.c\
+	23 unused i, j, k\
+  compt.c\
+	13 unused j, status\
+ 	122 added return 0;}

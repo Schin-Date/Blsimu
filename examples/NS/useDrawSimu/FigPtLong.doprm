@@ -1,0 +1,17 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//====== DrawFigFrame parameters=====
+/////////////////////Canvas
+string fCanvasName ElectronLPSDistribution
+string fCanvasTitle "Ele0 Longitudinal Sp"
+UInt_t fCanvas_X 30
+UInt_t fCanvas_Y 100
+UInt_t fCanvas_widX 600
+UInt_t fCanvas_widY 600
+///////////////////// Pad
+UInt_t Npadcolumn 1
+UInt_t Npadrow 1
+///////////////////// Pad doprm files
+string pad1doprm useDrawSimu/FigPtLongPad1.doprm
+
+enddoprm
+=============END of the data section

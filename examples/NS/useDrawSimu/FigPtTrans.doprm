@@ -1,0 +1,85 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//====== DrawFigFrame parameters=====
+/////////////////////Canvas
+string fCanvasName InteractionPointsTPS
+string fCanvasTitle "Ele0 Transverse PS"
+UInt_t fCanvas_X 30
+UInt_t fCanvas_Y 100
+UInt_t fCanvas_widX 600
+UInt_t fCanvas_widY 600
+///////////////////// Pad
+UInt_t Npadcolumn 3
+UInt_t Npadrow 3
+///////////////////// Pad doprm files
+string pad1doprm useDrawSimu/FigPtTransPad1.doprm
+string pad2doprm useDrawSimu/FigPtTransPad2.doprm
+string pad3doprm useDrawSimu/FigPtTransPad3.doprm
+string pad4doprm useDrawSimu/FigPtTransPad4.doprm
+string pad5doprm useDrawSimu/FigPtTransPad5.doprm
+string pad6doprm useDrawSimu/FigPtTransPad6.doprm
+string pad7doprm useDrawSimu/FigPtTransPad7.doprm
+string pad8doprm useDrawSimu/FigPtTransPad8.doprm
+
+
+
+enddoprm
+=============END of the data section
+/////////////////////Figure Frame TH2D
+string FigName InteractionPoints
+string FigTitle "Interaction Points"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string xtitle "s (m)"
+Double_t X_left 40 // s [m]
+Double_t X_right 80 // s [m]
+string ytitle "optical parameters"
+Double_t Y_min 0 // []
+Double_t Y_max 50 // [m] for beta, [um] for beamsize, [urad] for angular
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+
+
+
+//=============Fig Lattice==========
+//UInt_t Npads2Fil 2
+string doprmPad2 "FigCLSLatticeP2.doprm"
+string doprmPad3 "FigCLSLatticeP3.doprm"
+string doprmPad4 "FigCLSLatticeP4.doprm"
+------------------- .
+
+UInt_t ipad 1
+string FigName CLS1
+string FigTitle "CLS one cell"
+Bool_t ifOptTitle 0
+Bool_t ifOptStat 0
+Int_t NXpoints 200
+Double_t Xmin -5.
+Double_t Xmax 15.
+Int_t NYpoints 100
+Double_t Ymin -1
+Double_t Ymax 5.
+double scale_sigx  1.e6;
+double scale_sigxp  5.e6;
+double scale_sigy  1.e7;
+double scale_sigyp  5.e7;
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+Double_t XTitleOffset 0.8
+string xtitle "X (m)"
+string ytitle ""
+string optplot "H"
+double gxscale 1.
+double gyscale 1.
+double anglstep 0.
+int idel0 0
+int idel1 23
+double Ylattice 2.
+string fig_macro "$(PWD)/FigCLSLatticeMacro.C"
+------------------- .

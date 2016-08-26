@@ -1,0 +1,28 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//Pad1
+//====== DrawFigFrame parameters=====
+/////////////////////Figure Frame TH2D
+string FigName ElePosXYscatter
+string FigTitle "Interaction Points"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string xtitle "x (mm)"
+Double_t X_left -3. //
+Double_t X_right 3. //
+string ytitle "y (mm)"
+Double_t Y_min -0.2 //
+Double_t Y_max 0.2 // 
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+string figcontent "X0Y*1000:X0X*1000"
+string figcut ""
+string figoption "same"
+
+
+enddoprm
+=============END of the data section

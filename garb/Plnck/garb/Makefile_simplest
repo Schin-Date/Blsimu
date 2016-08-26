@@ -1,0 +1,100 @@
+#===========================================================
+# If this line appears, the original version is makes/Makefile_simplest
+#111114 created by S. D. 
+#
+#   use this as %make U=<program_name>
+#  ------------------------------------
+#  put source.cc files under <LSRCDIR>/
+#  and header.hh files under include/
+#===========================================================
+
+INCLUDE = -I/sw/include -I../include
+LIBDIR =  /sw/lib 
+LIBS = -lgsl -lm
+LSRCDIR = ../src
+LOBJS        = TrjSinusoidalB.o TrjSinuSetting.o TrjSinuExact.o
+LOBJS        = TrjSinusoidalB.o TrjSinuSetting.o TrjSinuExact.o TrjSinuPrtCntl.o
+TMPDIR = ../tmp
+
+
+PROGRAM      = $(U)
+PROGRAM      = main
+LANGSFX=cpp
+LANGSFX=cxx
+LANGSFX=cc
+COMPILER = g++ -m32
+LINKER = g++ -m32
+
+COMPOPT = 
+LINKOPT = 
+GOPTION = -DDEBUG
+GOPTION = 
+
+
+#----------------------------------------------------
+compile:
+#	make exe
+	touch $(LOBJS) $(OBJ)
+	rm $(LOBJS) $(OBJ)
+	make $(EXEIMAGE)
+	@make cleano
+
+clean:
+	make cleanx
+#----------------------------------------------------
+
+SRC         = $(PROGRAM).$(LANGSFX)
+OBJ         = $(PROGRAM).o
+EXEIMAGE    = $(PROGRAM).exe
+EXEIMAGE    = exe
+
+LDFLAGS    = -L$(LIBDIR) $(LIBS)
+
+COMPOPT := $(COMPOPT) $(GOPTION)
+LINKOPT := $(LINKOPT) $(GOPTION)
+
+LOBJDIR = $(TMPDIR)
+LOBJS := $(addprefix $(LOBJDIR)/,$(LOBJS))
+
+.SUFFIXES: 
+.SUFFIXES: .exe .f .c .o .a .cpp .cxx .cc
+
+#=================================================     
+#   Select particular language by changing make
+#   descriptions below.
+#=================================================     
+$(EXEIMAGE):  $(OBJ) $(LOBJS)
+	@if [ ! -d $(TMPDIR) ]; then mkdir $(TMPDIR); \
+      echo "tmp/ created...";fi
+#	  @echo OBJ: $(OBJ)
+#	  @echo LOBJS: $(LOBJS)
+	$(LINKER) $(LINKOPT) $(OBJ) $(LOBJS) -o $(EXEIMAGE) $(LDFLAGS)
+
+
+$(LOBJDIR)/%.o :  $(LSRCDIR)/%.cc
+	$(COMPILER) -c $(COMPOPT) $< $(INCLUDE) -o $@
+  
+$(OBJ) :  $(SRC) 
+	$(COMPILER) -c $(COMPOPT) $(SRC) $(INCLUDE) -o $@
+  
+.f.o:
+	$(FCOMPILE) -c $(FCMPOPT) $(FINCLUDE) $<
+
+.c.o:
+	$(CCOMPILE) -c $(CCMPOPT) $(CINCLUDE) $<
+
+.cpp.o:
+	$(CPPCOMPILE) -c $(CPPCMPOPT) $(CPPINCLUDE) $<
+
+.cxx.o:
+	$(CPPCOMPILE) -c $(CPPCMPOPT) $(CPPINCLUDE) $<
+
+.cc.o:
+	$(CPPCOMPILE) -c $(CPPCMPOPT) $(CPPINCLUDE) $<
+
+cleano :
+	@ rm $(OBJ)
+
+cleanx :
+	 rm $(EXEIMAGE)
+

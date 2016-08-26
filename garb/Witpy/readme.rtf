@@ -1,0 +1,270 @@
+{\rtf1\ansi\ansicpg932\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fnil\fcharset128 HiraKakuPro-W3;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset128 HiraKakuProN-W3;
+\f3\fswiss\fcharset0 ArialMT;\f4\fswiss\fcharset0 Helvetica;\f5\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red255\green0\blue0;\red170\green13\blue145;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Created on 160721\
+\
+
+\b\fs26 local generation of libwitpy.a and its test
+\b0\fs24 \
+cpplib/Witpy: make lib\
+cpplib/Witpy/dev: tcompile\
+cpplib/Witpy/dev: exe\
+\
+\pard\pardeftab720
+
+\f1\b\fs28 \cf0 Installation in a package
+\b0 \
+\'a0 \'a0 \'a0The installation will be done basically by copying the whole directory:\
+\'a0\'a0\'a0\'a0\'a0cp cpplib/Witpy <Package>/\
+\'a0\'a0\'a0\'a0\'a0rm <Package>/Witpy/libwitpy.a\
+\'a0\'a0\'a0\'a0\'a0rm -r <Package>/Witpy/dev\
+\'a0\'a0\'a0\'a0\'a0rm -r <Package>/Witpy/devPy\
+\'a0\'a0\'a0\'a0\'a0rm -r <Package>/Witpy/tmp (if there)\
+\
+\'a0 \'a0 \'a0then, for local make,\'a0\
+\'a0 \'a0 \'a0<Package>/Witpy: make lib\
+\
+\'a0 \'a0 \'a0and, to prepare for cmake out-of-source build,\
+\
+\'a0\'a0\'a0\'a0\'a0mv Blsimu/Witpy/CMakeLists_template.txt\'a0Blsimu/Witpy/CMakeLists.txt\
+\
+\
+
+\b Description on cpplib/Witpy
+\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+\pard\pardeftab720
+
+\f1\fs28 \cf0 \'a0\'a0\'a0\'a0\'a0The library is to be linked with C/C++ sources.\
+\
+\'a0 \'a0\'a0 Sources are composed of C++ and Python parts\'a0\
+     as this package is a\'a0pythonized+embedded version of the\'a0\
+     cpplib::Witgn (SetDoPrm + StrTable).\
+\
+\pard\pardeftab720
+
+\f2 \cf0     \'82\'b1\'82\'ea\'82\'cd
+\f1 python
+\f2 \'82\'f0\'8e\'67\'82\'a4\'82\'aa\'81\'41
+\f1 C++
+\f2 \'83\'5c\'81\'5b\'83\'58\'82\'c6\'83\'8a\'83\'93\'83\'4e\'82\'b5\'82\'c4\'8e\'67\'82\'a4\'83\'89\'83\'43\'83\'75\'83\'89\'83\'8a\'82\'c8\'82\'cc\'82\'c5\
+    \'82\'c6\'82\'e8\'82\'a0\'82\'a6\'82\'b8
+\f1 cpplib
+\f2 \'82\'c9\'82\'a8\'82\'ad\'81\'42
+\f1 \
+
+\f2     \'90\'56\'82\'b5\'82\'a2
+\f1 Mac
+\f2 \'82\'c9\'8d\'ec\'82\'e9
+\f1 directory system
+\f2 \'82\'c5\'82\'cd\'82\'b1\'82\'cc\'8c\'8f\'82\'f0\'8d\'6c\'82\'a6\'82\'e9
+\f1 \
+
+\f2     \'83\'5c\'81\'5b\'83\'58\'82\'cd
+\f1 \'a0 include, src, srcPy\
+
+\f2     
+\f1 \'a0Development:\'a0{\field{\*\fldinst{HYPERLINK "file:///Users/schin/Data/notes/prodev/c++/EmbedPython/06readDoPrm/srcPy"}}{\fldrslt \cf2 \ul \ulc2 file:///Users/schin/Data/notes/prodev/c++/EmbedPython/06readDoPrm/srcPy}}\
+\
+\pard\pardeftab720
+
+\b \cf0 Build
+\b0 \
+\'a0 \'a0 \'a0In an in-source build by Makefile, the path to to the source directory\
+\'a0 \'a0 \'a0is obtainded from the shell. In an out-of-source build by CMakeLists.txt,\
+\'a0 \'a0 \'a0the one is obtained through a cmake macro variable CMAKE_SOURCE_DIR.\
+\'a0 \'a0 \'a0The obtained path is passed to a source code src/SetDoPrm.cpp through\
+\'a0 \'a0 \'a0a macro variable WITPY_SRCDIR and used to specify the location of a\'a0\
+\'a0 \'a0 \'a0Python source srcPy/readDoPrm.py for the Python interpreter.\
+\
+\
+details in evernote: {\field{\*\fldinst{HYPERLINK "https://www.evernote.com/shard/s312/nl/2147483647/65ea4072-1454-48e9-a68e-6e4abf6b0c86/"}}{\fldrslt Witpy}}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+(Generating a libwitpy.a)\
+make lib\
+\
+(Using libwitpy.a)\
+An example is given in dev/ and devPy\
+\
+(
+\f1\fs28 make lib by Makefile
+\f0\fs24 )
+\f1\fs28 \
+\pard\pardeftab720
+\cf0 \'a0 \'a0 \'a0The Makefile get the source directory (where Makefile lays) from the shell and\
+\'a0 \'a0 \'a0it is passed to a environment variable WITPY_SRCDIR. A source code\
+\'a0 \'a0 \'a0src/SetDoPrm.cpp get this variable to specify the location of a Python\
+\'a0 \'a0 \'a0source srcPy/readDoPrm.py which is passed to the Python interpreter.\
+\
+\'a0 \'a0 \'a0Therefore, one need to issue\
+\
+\'a0 \'a0 \'a0%make lib\
+\
+\'a0 \'a0\'a0 to use libwitpy.a when the directory of Witpy is moved\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+\
+(Descriptions)\
+\pard\pardeftab720
+
+\f1\fs28 \cf0 Sources are composed of C++ and Python parts.\
+The library is to be linked with C/C++ sources.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+srcPy/readDoPrm.py reads input doprm file through Python\
+and create a class list object ReadDoPrm.data_lst[] which is composed\
+of lists [str varName, str vartype_tag, str py_val].\
+Notice that py_val can be any type as they are in practice identified\
+in this program. However, \cf3 it is finally converted into a string\cf0  at the\
+end (around line 167) of the program aiming at a use in src/SetDoPrm.cpp\
+with templated conversions.\
+\
+Thus, settings for py_val according to their types are not necessary \
+ in srcPy/readDoPrm.py. Also, variables <varName> are assigned their\
+values in the Python interpreter through macro call near line 156 and\
+this part is not necessary in the program. They are remained in the\
+program though for future uses. These "not necessary" parts turns\
+out to be \cf3 NECESSARY\cf0  when we employ python \cf3 eval()\cf0  method to\
+interpret inputs in forms of expressions with variable names.\
+\
+(Versions)\
+-99 SetDoPrm: The compile time macro WITPY_SRCDIR is translated into a string\
+to use as a path specification.\
+\
+(History)\
+Files with a tag "maxBckUp" are first made programs with all extra parts\
+kept remined.\
+\
+These first made programs copy contents of PyObject *pDoPrm_lst to\
+C vector object m_map_prm. With this, the original template conversion\
+in SetDoPrm was kept as its original form.\
+	In the development, pDoPrm have been eliminated since\
+only one of PyObject *pDoPrm_lst and C vector m_map_prm is necessary and\
+the elimination of m_map_prm requires to rewrite template conversions with \
+Python APIs. \
+	In the last Witpy::SetDoPrm, a python class object data_lst[] containing\
+list form data is returned from a ReadDoPrm method txt2dataLst.\
+The C class SetDoPrm has its method ReadDoPrm which receive the\
+return from python, convert them into C strings, and save them into a\
+vector structure m_map_prm. SetDoPrm have templated converters\
+to get values from the kept table in the class SetDoPrm.\
+\
+Points in the futrure shapeup\
+========================\
+\
+\
+\
+\
+\
+\
+===================================================================\
+Old Witgn\
+(WARNING)\
+\pard\pardeftab720
+
+\f3 \cf0 --table
+\f2 \'82\'f0\'93\'c7\'82\'dc\'82\'b9\'82\'bd\'82\'c6\'82\'ab\'81\'41\'8e\'c0\'90\'94\'97\'93\'82\'c9\'82\'a0\'82\'e9\'90\'ae\'90\'94\'8c\'5e\'95\'5c\'8c\'bb\'82\'cd\'81\'41\'8d\'c5\'8f\'89\'82\'c9\'97\'5e\'82\'a6\'82\'e9
+\f3 template data
+\f2 \'82\'f0\'8e\'e8\'82\'c5\'82\'a2\'82\'b6\'82\'c1\'82\'c4\'82\'a8\'82\'ad
+\f3 \
+
+\f2 \'95\'4b\'97\'76\'82\'aa\'82\'a0\'82\'e9\'81\'42
+\f3 \'a0
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f4 \cf0 (DESCRIPTION)\
+\
+(USAGE)\
+make lib\
+make U=testSetDoPrm\
+testSetDoPrm_cxx\
+\
+with cmake\
+	mv Makefile Makefile_manual\
+	cmake .\
+	make\
+\
+\
+\
+(VERSIONS)\
+99: getValue()  const, is_a_key() const, getNmaps(), getMap() const\
+v-100/SetDoPrm-v01.3:  setValue\
+\
+(DEVELOP)\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f5\fs22 \cf0 \CocoaLigature0 variable_type not kept anywhere
+\f4\fs24 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+(History)\
+150415 Recompiled with clang++.\
+141026 StrTable::get_nwords() added\
+141026 Integer types at positions of 'd' in datastruct > StrTable.cpp::is_data_line, put_data_line\
+             eatTable now allows int type data for a word declared as double\
+141026 enforced skip by nskip > StrTable.cpp::eatTable: skipped lines > put_comment_line\
+131218 float added to get/setValue\
+131211b versioning method modified to count down\
+131211a v-100 created (SetDoPrm-v01.3, StrTable-v03.1w)\
+131025 updated for a new compiler\
+	  ==> SetDoPrm-v01.2w.h, StrTable-v03.1w.h\
+--------------------------------------------\
+SetDoPrm is a subclass of StrTable. This is why \
+	
+\f5\fs22 \cf4 \CocoaLigature0 protected\cf0 : \cf4 static\cf0  \cf4 int\cf0  s_PrtLvl;\
+
+\f4\fs24 \CocoaLigature1 is a member of StrTable.\
+--------------------------------------------\
+\
+witgn::SetPrtLvl conventions\
+	SetPrtLvl(n)	n	description\
+				N0-3   User\
+				N0	no print\
+				N1	user basic\
+				N2	user option\
+				N3	user detail\
+				N4-5	User Special\
+				N4	user debug\
+				N5	user debug detail\
+				D6-	System Debug\
+				D6	class instantiation, system debug basic\
+				D7	function calls\
+				D8	pointers, internal operations\
+				D9	extra detail\
+				D10      print everything\
+}

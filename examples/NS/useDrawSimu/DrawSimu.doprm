@@ -1,0 +1,14 @@
+//int PrtLvl 0 //printout level (larger > more detailed)
+//====== input files =====
+string blsimuDoPrmFile "useBlsimu/blsimu.doprm";
+string blsimuout_readDoPrmFile "useBlsimu/blsimuout_read.doprm";
+//string blsimuOutFile "../../useBlsimu+/AchrAPCO2_1mm/blsimu.out";
+//string RingOptDoPrmFile "/Users/schin/Data/notes/Collaboration/CLS/Lattice/RootData/RingOpt.doprm";
+string RingOptDoPrmFile "PROJECT/../accelerator_data/NS/newsubarustorageringlatticedata/cooked/RingOpt.doprm";
+
+//====== output files =====
+string outfile,"useDrawSimu/DrawSimu.out";
+string logfile,"useDrawSimu/DrawSimu.log";
+
+enddoprm
+=============END of the data section

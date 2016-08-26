@@ -1,0 +1,25 @@
+#!/bin/bash
+# set directory of the project source files
+#-------------------------------------------
+#if [ -z "$1" ]; then
+#	echo submit me as '"build.sh /your/computer/somewhere/LCSimu_dev" or edit me.'
+#	exit
+#fi
+
+
+Project_SRCDIR=$1
+#Project_SRCDIR="/Users/schin/Data/notes/LBCS/Blsimu"
+export Project_SRCDIR
+#LCSIMU_SOURCE_DIRNAM=""
+#export LCSIMU_SOURCE_DIRNAM
+#
+#-------------------------------------------
+#cmake  -D LCSIMU_SOURCE_DIR=${LCSIMU_SOURCE_DIRNAM} ${Project_SRCDIR}
+cmake  ${Project_SRCDIR}
+make
+
+#cp examples/NS/useBlsimu/blsimu.doprm useBlsimu
+#cp examples/SSRF_try/useBlsimu/blsimu.doprm useBlsimu
+
+#cp examples/NS/useBlsimu/blsimu.doprm useBlsimu
+#cp -r examples/NS/useDrawSimu ./

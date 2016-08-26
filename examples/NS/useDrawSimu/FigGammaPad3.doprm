@@ -1,0 +1,29 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//Pad1
+//====== DrawFigFrame parameters=====
+/////////////////////Figure Frame TH2D
+string FigName ThetaGamma
+string FigTitle "ThetaGamma Distribution"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string figcontent "(sqrt((PGX/PGZ)**2+(PGY/PGZ)**2)*1000)>>histo13"
+string figcut ""
+string figoption "same"
+
+string xtitle "Thetagamma (mrad)"
+Double_t X_left 0. //
+Double_t X_right 1.5 //
+string ytitle "Nev (Total 30K)"
+Double_t Y_min 0 //
+Double_t Y_max 1600 // 
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+
+
+enddoprm
+=============END of the data section

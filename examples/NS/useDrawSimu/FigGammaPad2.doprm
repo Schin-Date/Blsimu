@@ -1,0 +1,29 @@
+//int PrtLvl 3 //printout level (larger > more detailed)
+//Pad1
+//====== DrawFigFrame parameters=====
+/////////////////////Figure Frame TH2D
+string FigName EGammaSpectrum
+string FigTitle "Egamma Distribution"
+Bool_t ifOptTitle 1
+Bool_t ifOptStat 0
+string figcontent "PGE>>histo12"
+string figcut ""
+string figoption "same"
+
+string xtitle "Egamma (MeV)"
+Double_t X_left 0. //
+Double_t X_right 18. //
+string ytitle "Nev (Total 30K)"
+Double_t Y_min 0 //
+Double_t Y_max 600 // 
+Int_t NXpoints 100
+Int_t NYpoints 100
+Double_t leftMargin 0.16
+Double_t XLabelOffset 0.
+Double_t XTitleOffset 0.8
+Double_t YLabelOffset 0.01
+Double_t YTitleOffset 1.8
+
+
+enddoprm
+=============END of the data section

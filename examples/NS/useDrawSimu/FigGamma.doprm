@@ -1,0 +1,21 @@
+//int PrtLvl 0 //printout level (larger > more detailed)
+//====== DrawFigFrame parameters=====
+/////////////////////Canvas
+string fCanvasName CLSGamma
+string fCanvasTitle "CLS Gamma"
+UInt_t fCanvas_X 30
+UInt_t fCanvas_Y 100
+UInt_t fCanvas_widX 600
+UInt_t fCanvas_widY 600
+///////////////////// Pad
+UInt_t Npadcolumn 2
+UInt_t Npadrow 2
+///////////////////// Pad doprm files
+string pad1doprm useDrawSimu/FigGammaPad1.doprm
+string pad2doprm useDrawSimu/FigGammaPad2.doprm
+string pad3doprm useDrawSimu/FigGammaPad3.doprm
+
+
+
+enddoprm
+=============END of the data section

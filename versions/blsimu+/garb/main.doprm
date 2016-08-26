@@ -1,0 +1,8 @@
+//Pass this to _cxx.
+int PrtLvl 3
+//=========== ========
+int MAXNPR 128 
+int LPNAM 32
+double R4OVER 1.6e38;
+double R4UNDR .3E-38;
+int randseed 566387; for setrandom(randseed)

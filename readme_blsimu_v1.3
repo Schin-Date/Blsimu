@@ -1,0 +1,89 @@
+
+                     blsimu_v1.3 on saho           
+                   ======================
+                                                Released on 110310
+
+Content of this version is the same as that of the previous version v1.2
+except that this one works on saho. The program set allows cases of the 
+high energy gamma ray production by considering low energy electrons 
+which may splash out in straight sections and the side of a bending magnet. 
+Particle coordinates in the output are given when the particle leave 
+physical chamber appertures or dipole field of the bending magnet except 
+for these which projects themselves onto a tagger when an option Tagger-on
+is assigned.
+- Side splash inside Q is not considered.
+- Sextuples are not installed.
+- Corrector magnets are not installed. 
+
+How to produce events
+---------------------
+We have two working directories for bl33(LEPS) and bl31(LEPS2).
+Choose one to get in.
+% cd work_blxx
+where xx = 33 or 31.
+Reference output files for 3000 events logxx-3k and outxx-3k.dat 
+are available for checking your run.
+% edit Useinp.txt
+to edit input parameter file. Modify this file according to your needs.
+% edit tagger_blxx.txt
+to define tagger surface in the beamline . Specify points on 
+the z-x plane where z is the axis associated with the last bending magnet 
+directing into the beam direction and x is the axis directing outside the 
+ring on the horizontal plane. The given points are connected by line segments 
+so that a polygon is defined on the z-x plane. 
+% exe > log 
+to produce events and a log file "log". The events are stored in an ascII file 
+"out", which is defined by a line
+       strcpy(outfile,"out");
+in the Useinp.txt. The content of the output is summarized in the end of this 
+readme file.
+ 
+How to make
+----------------
+% cd src/lib
+% make
+to compile. The output is an executable file "exe" in the current directory.
+To use it for blxx,
+% mv exe work_blxx
+ 
+Sources
+-----------
+All source files of the code is found in a directoty src/lib/. 
+A directoty input/ contain ascII files for accelerator
+lattice and optics. Another directory include/ contain a header file to
+diefine universal constants and energy scales.
+
+Content of the output
+---------------------
+Data format: 
+A typical line of an ASCII data file looks like 
+9.698450e+02 1.899630e-04 4.790170e-06 9.698450e+02 7.998145e+03 -1.023006e-01 6.962928e-03 7.998145e+03 9.768953e+02 -2.385339e-02 6.450044e-05 9.768953e+02 6.469310e+03 -1.098259e+02 2.979221e-02 6.468378e+03 1.528835e+03 -8.072750e-02 -6.377921e-02 1.528835e+03
+A line is thus composed of 20 real variables. 
+
+ ********************************************************
+ *  Var numb  *   Name  *       Explanation
+ ********************************************************
+ *      1     * X0S       incident electron position s
+ *      2     * X0X       incident electron position x
+ *      3     * X0Y       incident electron position y
+ *      4     * X0Z       incident electron position z
+ *      5     * P0E       incident electron energy
+ *      6     * P0X       incident electron momentum x
+ *      7     * P0Y       incident electron momentum y
+ *      8     * P0Z       incident electron momentum z
+ *      9     * X1S       secondary electron position s
+ *     10     * X1X       secondary electron position x
+ *     11     * X1Y       secondary electron position y
+ *     12     * X1Z       secondary electron position z
+ *     13     * P1E       secondary electron energy
+ *     14     * P1X       secondary electron momentum x
+ *     15     * P1Y       secondary electron momentum y
+ *     16     * P1Z       secondary electron momentum z
+ *     17     * PGE       gamma energy
+ *     18     * PGX       gamma momentum x
+ *     19     * PGY       gamma momentum y
+ *     20     * PGZ       gamma momentum z
+ ********************************************************
+
+* s is the length along accelerator ring from a fixed reference point
+* x directs toward outside the ring, y to downward and z to the beam direction. 

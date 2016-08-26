@@ -1,0 +1,12 @@
+#!/bin/bash
+#make.sh ../BlsimuSource
+
+#cp examples/NS/useBlsimu/blsimu.doprm useBlsimu
+#cp examples/SSRF_try/useBlsimu/blsimu.doprm useBlsimu
+
+
+blsimu_SRCDIR=.
+export blsimu_SRCDIR
+
+
+Blsimu.exe

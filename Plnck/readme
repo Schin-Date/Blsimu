@@ -1,0 +1,25 @@
+Plnck  : 
+===================================
+(Description)
+131022
+include files CLHEP_xxx.h were copied from opt/local/include/CLHEP/Units/
+Some constants in clib/include/const.h are added.
+To use constants and units, add lines in the following as in testConsts.
+
+#include <plnck.h>
+using namespace plnck;
+
+
+(Usage) 
+make
+testxxxx_cxx
+
+(History)
+150420 ECHARG = e_SI; => e_SI * coulomb;
+150420 Recompiled with clang++.
+	testConsts.cpp::
+		PLKLGT => hbarc/GeV/fm
+		WL2E => hc/eV/nm
+		ERDIUS => classic_electr_radius/m
+
+(ToDo)

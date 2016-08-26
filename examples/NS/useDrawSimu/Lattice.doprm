@@ -1,0 +1,7 @@
+//Pass this to _cxx.
+//int PrtLvl 3
+//=========== ========
+string dataDoPrm "/Users/schin/Data/notes/Collaboration/CLS/Lattice/RootData/CLSlattice09.doprm"
+//string whattodo "check input data"
+//string whattodo "create root file, if not found"
+string whattodo "create RingData"
