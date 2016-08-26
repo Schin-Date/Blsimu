@@ -1,6 +1,0 @@
-N...read_opt < eat_table_optics: ndata = 646
-N...read_opt : tunex=0.000000, tuney=0.000000
-N...read_lattice < eat_table_lattice: ndata = 647
-N...read_lattice: nelem = 172 elements stored, chao
-N...read_tagger < eat_table_tagger: ndata = 3
-N...bmgen: dispersion on
