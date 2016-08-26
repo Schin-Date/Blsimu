@@ -71,31 +71,30 @@ A typical line of an ASCII data file looks like
 
 A line is thus composed of 20 real variables. 
 
-*Num  Name  Explanation*
+*Num.  Name:  Explanation*
 
-*      1     * X0S       incident electron position s
-*      2     * X0X       incident electron position x
-*      3     * X0Y       incident electron position y
-*      4     * X0Z       incident electron position z
-*      5     * P0E       incident electron energy
-*      6     * P0X       incident electron momentum x
-*      7     * P0Y       incident electron momentum y
-*      8     * P0Z       incident electron momentum z
-*      9     * X1S       secondary electron position s
-*     10     * X1X       secondary electron position x
-*     11     * X1Y       secondary electron position y
-*     12     * X1Z       secondary electron position z
-*     13     * P1E       secondary electron energy
-*     14     * P1X       secondary electron momentum x
-*     15     * P1Y       secondary electron momentum y
-*     16     * P1Z       secondary electron momentum z
-*     17     * PGE       gamma energy
-*     18     * PGX       gamma momentum x
-*     19     * PGY       gamma momentum y
-*     20     * PGZ       gamma momentum z
-********************************************************
-
-* s is the length along accelerator ring from a fixed reference point
-* x directs toward outside the ring, y to downward and z to the beam direction. 
+1.     X0S:       incident electron position s
+2.     X0X:       incident electron position x
+3.     X0Y:       incident electron position y
+4.     X0Z:       incident electron position z
+5.     P0E:       incident electron energy
+6.     P0X:       incident electron momentum x
+7.     P0Y:       incident electron momentum y
+8.     P0Z:       incident electron momentum z
+9.     X1S:       secondary electron position s
+10.     X1X:       secondary electron position x
+11.     X1Y:       secondary electron position y
+12.     X1Z:       secondary electron position z
+13.     P1E:       secondary electron energy
+14.     P1X:       secondary electron momentum x
+15.     P1Y:       secondary electron momentum y
+16.     P1Z:       secondary electron momentum z
+17.     PGE:       gamma energy
+18.     PGX:       gamma momentum x
+19.     PGY:       gamma momentum y
+20.     PGZ:       gamma momentum z
+-----------
+- s is the length along accelerator ring from a fixed reference point
+- x directs toward outside the ring, y to downward and z to the beam direction. 
 
 
