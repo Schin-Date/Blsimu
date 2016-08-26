@@ -1,0 +1,32 @@
+int PrtLvl 2
+string ADataFile "optics.dat"
+int Nskip 46
+string ADataTempl " DID10                            0.1        1.566263977        6.635106157     -0.00690383527    8.354131379e-08       -0.064108604     -0.01507477386      0.01018925691     0.002399043061"
+string lattice_scheme "NShalf_ring"
+string LogFile "optics.log"
+//string logFile "optics.log"
+string RootDataFile "optics.root"
+string treeName "NSLattice_T"
+string Name/C Tvariable
+string S_m/D Tvariable
+string Betax_m/D Tvariable
+string Betay_m/D Tvariable
+string Dx_m/D Tvariable
+string DPx/D Tvariable
+//string Alfx/D Tvariable
+//string Alfy/D Tvariable
+string Alphax_m/D Tvariable
+string Alphay_m/D Tvariable
+string Mux/D Tvariable
+string Muy/D Tvariable
+//string 
+//BA, BB, 
+//BII, BI, SI, SQ
+//QA, QB, QC, Q1~Q4
+//SD, SF, S1~S2
+string "BA" Bmag
+string "BB" Bmag
+string "BI" Bmag
+string "BII" Bmag
+//string QA Qmag
+//string SD Smag

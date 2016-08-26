@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg932\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11040\viewh8940\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs24 \cf0 Understanding the CLS lattice and optics\
+==================================\
+There are 2 information sources:\
+[1] 
+\b CLSlattice09.xlsx
+\b0  by Emil Hallin in Dec. 2009\
+[2] Les Dallin's references (a) 5.2.31.2.Rev.0-Synchrotron_Light_Source_Magnets-Dallin .pdf \
+     and (b) 
+\b 5.2.69.2.Rev.3-Canadian_Light_Source_Main_Ring_Lattice-Dallin.pdf
+\b0 \
+\
+Take [2](b) as the reference\
+---------------------------------------\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardeftab720\pardirnatural
+\cf0 circumference = 170.88 m ( averaged radius = 27.2 m)\
+\pard\pardeftab720
+\cf0 Ee = 2.9 GeV\
+madx input = 
+\b madxinp5269Appv3OK
+\b0  (nominal [there are nominal and low beta operation modes])\
+\
+reading madxinp5269Appv3OK together with [2](b)\
+--------------------------------------------------------------------\
+The detailed numbers in madxinp file is taken from \
+appendix A (January 2004) in [2](b). These numbers \
+are slightly different from them shown in Fig. 1 of [2](b).\
+CLSlattice09.xlsx is consistent with madxinp parameters. \
+\
+cooked/\
+=============\
+CLSlattice09.xlsx was manually cooked > 
+\b cooked/CLSlattice09.dat
+\b0 \
+
+\b cooked/CLSlattice09.doprm
+\b0  was manually created for further cooking by Lattice package\
+\
+\
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\
+Drawing the lattice utilizing MyRoot_v2.4\
+-------------------------\
+madxinp => FigCLSLattice.cpp\
+\
+Understanding CLSlattice09.xlsx by Emil Hallin in Dec. 2009\
+---------------------------------------------------------------------------------\
+The lattice coincides with one installed in FigCLSLattice.app < madxinp\
+Then I expect optics parameters coincides with one from madx. (There seems discrepancy)\
+\
+DrawOpt\
+=============\
+}

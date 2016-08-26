@@ -1,0 +1,23 @@
+TITLE,"CLS January 2004 (betay=3.26)";
+//5.2.69.2.Rev.3 (2004) APPENDIX A
+//beam, particle=electron, energy=2.9;
+beam;
+option,echo,warn,info;
+assign,echo=log;D1:DRIFT,L=.25;
+DF:DRIFT,L=.357;
+DE:DRIFT,L=2.607;D2:DRIFT,L=0.534;D3:DRIFT,L=0.312;D4:DRIFT,L=.407;D5:DRIFT,L=.3125;D6:DRIFT,L=.1695;D7:DRIFT,L=.3975;D8:DRIFT,L=.322;
+Q1:QUADRUPOLE,L=.18,K1=1.67899,APERTURE=.035;Q2:QUADRUPOLE,L=.18,K1=1.88264,APERTURE=.035;Q3:QUADRUPOLE,L=.260,K1=2.03992,APERTURE=.035;
+S1:SEXTUPOLE,L=.192,K2=-24.7925,APERTURE=.035;S2:SEXTUPOLE,L=.192,K2=39.0518,APERTURE=.035;
+HC:SBEND,L=1.87,ANGLE=0.2617994,E1=0.105,E2=.105,K1=-.3972,
+HGAP=.025,FINT=0.5,FINTX=0.5,K2=-0.2,H1=0.,H2=0.;
+CELL:LINE=(DE,Q1,D2,Q2,D3,HC,D4,S1,
+D5,Q3,D6,S2,D6,Q3,D7,S1,D8,HC,D3,Q2,D2,Q1,DE);
+RING:LINE=(12*CELL);
+use, period=RING;
+!save,sequence=ring,file=seq5269APPOK,bare;
+!stop;
+select,flag=twiss,column=name,s,betx,mux,alfx,dx,dpx,bety,muy,alfy,dy,dpy;
+twiss,file=twiss5269APPOK;
+stop;
+////twiss,file=optics,sectormap;
+

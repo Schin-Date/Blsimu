@@ -1,0 +1,41 @@
+int PrtLvl 2
+string ADataFile "tmp_opt.dat"
+int Nskip 0
+string ADataTempl "100.0 3.692 0.400 0.314 0. 0. 0. 2.564 0.802 0.641 0. 0. 0."
+string LogFile "tmp_opt.log"
+string RootDataFile "tmp_opt.root"
+
+string treeName "TMP_OPT_T"
+string S_m/D Tvariable
+string Betax_m/D Tvariable
+string Alfx/D Tvariable
+string Gamx/D Tvariable
+string Nux/D Tvariable
+string Etax_m/D Tvariable
+string Etapx/D Tvariable
+string Betay_m/D Tvariable
+string Alfy/D Tvariable
+string Gamy/D Tvariable
+string Nuy/D Tvariable
+string Etay_m/D Tvariable
+string Etapy/D Tvariable
+
+
+
+
+enddoprm
+
+string treeName "TMPOPT_T"
+string Name/C Tvariable
+string S_m/D Tvariable
+string Betax_m/D Tvariable
+string Alfx/D Tvariable
+string Betay_m/D Tvariable
+string Alfy/D Tvariable
+string Etax_m/D Tvariable
+string Etapx/D Tvariable
+string Sigx_m/D Tvariable
+string Sigxp/D Tvariable
+string Sigy_m/D Tvariable
+string Sigyp/D Tvariable
+

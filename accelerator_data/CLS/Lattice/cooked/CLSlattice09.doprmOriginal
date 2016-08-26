@@ -1,0 +1,22 @@
+int PrtLvl 2
+string ADataFile "CLSlattice09.dat"
+int Nskip 0
+string ADataTempl "HCO 10.427 3.264 -2.805 16.993 8.912 0.08 0.081 2.86E-04 2.64E-04 4.16E-05 2.19E-05"
+string lattice_scheme "CLS_1cell"
+string LogFile "CLSlattice09.log"
+string RootDataFile "CLSlattice09.root"
+string treeName "CLScellLattice_T"
+string Name/C Tvariable
+string S_m/D Tvariable
+string Betax_m/D Tvariable
+string Alphax_m/D Tvariable
+string Betay_m/D Tvariable
+string Alphay_m/D Tvariable
+string Etax/D Tvariable
+string Etapx/D Tvariable
+string Sigmax_m/D Tvariable
+string Sigmaxp/D Tvariable
+string Sigmay_m/D Tvariable
+string Sigmayp/D Tvariable
+//string "BA" Bmag
+//string QA Qmag
