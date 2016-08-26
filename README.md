@@ -93,6 +93,7 @@ A line is thus composed of 20 real variables.
 18.     PGX:       gamma momentum x
 19.     PGY:       gamma momentum y
 20.     PGZ:       gamma momentum z
+
 -----------
 - s is the length along accelerator ring from a fixed reference point
 - x directs toward outside the ring, y to downward and z to the beam direction. 
